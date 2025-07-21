@@ -128,19 +128,47 @@
     .hide-buttons .btn {
       display: none !important;
     }
+    
+    /* Force small terms text during PDF generation */
+    .hide-buttons .terms-list {
+      font-size: 8px !important;
+    }
+    .hide-buttons .terms-list p {
+      font-size: 8px !important;
+    }
+    .hide-buttons .terms-title {
+      font-size: 9px !important;
+    }
 
     /* terms styling */
     .terms {
       width: 100%;
     }
     .terms-list {
-      font-size: 9px;
+      font-size: 9px !important;
     }
-    .terms-list p { margin: 0; }
+    .terms-list p { 
+      margin: 0; 
+      font-size: 9px !important;
+    }
     .terms-title {
       margin-bottom: 0px;
-      font-size: 10px;
+      font-size: 10px !important;
     }
+    
+    /* Additional override for very small screens */
+    @media screen and (max-width: 480px) {
+      .terms-list {
+        font-size: 7px !important;
+      }
+      .terms-list p {
+        font-size: 7px !important;
+      }
+      .terms-title {
+        font-size: 8px !important;
+      }
+    }
+    
     /* space before signature */
     .signature { margin-top: 20px; }
 
@@ -206,6 +234,7 @@
         <p>ABN: 84 138 636 567</p>
         <p>Tel: 02 9550 1289 Email: leanne@gtschool.com.au</p>
         <p class="address">20-22 Fairview Avenue, The Entrance NSW 2261</p>
+        
         <label class="buyer">
           Buyer:
           <input type="text" />
@@ -514,7 +543,6 @@
       const el = document.getElementById(id);
       return el ? el.value : '';
     }
-
   </script>
 </body>
 </html>
